@@ -10,7 +10,7 @@ let time f x =
   let dt = Unix.gettimeofday () -. t0 in
     (y, dt)
 
-let default_iters = ref 20
+let default_iters = ref 3
 
 let time ?(overhead = 0.) ?(iters = !default_iters) f x =
   let rec loop best = function
@@ -332,7 +332,7 @@ end
 let show_sizes = ref false
 
 let args = [
-  "-n", Arg.Set_int default_iters, "N Number of iterations (default: 10)";
+  "-n", Arg.Set_int default_iters, "N Number of iterations (default: 3)";
   "-s", Arg.Set show_sizes, " Show structure sizes.";
 ]
 
