@@ -45,9 +45,9 @@ let read_lines file =
         | None -> close_in ic; Array.of_list (List.rev acc)
   in loop []
 
-let lines = shuffle (read_lines "/usr/share/dict/american-english")
-let strings = shuffle (read_lines "/usr/share/dict/american-english-large")
-let strings' = shuffle (read_lines "/usr/share/dict/spanish")
+let lines = shuffle (read_lines "corpora/american-english")
+let strings = shuffle (read_lines "corpora/american-english-large")
+let strings' = shuffle (read_lines "corpora/spanish")
 
 let hitrate = 100. *. float (Array.length lines) /. float (Array.length strings)
 
