@@ -1,3 +1,7 @@
+
+(* code by Matías Giovannini, retrieved from
+ * http://alaska-kamtchatka.blogspot.com/2009/06/simple-efficient-trie-maps.html *)
+
 type key = string
 type 'a t = 'a node option
 and 'a node =

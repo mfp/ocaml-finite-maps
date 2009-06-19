@@ -1,4 +1,6 @@
 
+(* Copyright (C) 2009 Mauricio Fernandez <mfp@acm.org>  http://eigenclass.org *)
+
 type 'a t = 
     E (* empty *)
   | NV of char * 'a t * 'a t * 'a t (* no value *)

@@ -1,3 +1,7 @@
+
+(* code by Matías Giovannini, retrieved from
+ * http://alaska-kamtchatka.blogspot.com/2009/06/tree-nursery.html *)
+
 type 'a t = E
           | L of 'a
           | B of      char * 'a t * 'a t * 'a t

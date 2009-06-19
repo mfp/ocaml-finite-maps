@@ -1,3 +1,4 @@
+(* Copyright (C) 2009 Mauricio Fernandez <mfp@acm.org>  http://eigenclass.org *)
 
 type ('k, 'v) t = 
     { mutable size : int; 

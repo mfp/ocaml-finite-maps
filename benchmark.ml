@@ -1,3 +1,6 @@
+
+(* Copyright (C) 2009 Mauricio Fernandez <mfp@acm.org>  http://eigenclass.org *)
+
 open Printf
 open ExtArray
 
