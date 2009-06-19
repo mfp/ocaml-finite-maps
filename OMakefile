@@ -1,0 +1,27 @@
+
+NATIVE_ENABLED = true
+OCAMLOPTFLAGS = -S -inline 100
+USE_OCAMLFIND = true
+
+OCAMLPACKS[] =
+	unix
+	extlib
+
+OBJECTS[] =
+	size
+	fasthashtbl
+	hashtbl_mod
+	hashtbl_hval
+	ternary
+	trie_map
+	trie_map_mod
+	benchmark
+
+OCamlProgram(benchmark, $(OBJECTS))
+
+.DEFAULT: benchmark
+
+.PHONY: clean
+
+clean:
+	rm -f $(filter-proper-targets $(ls R, .)) *.s
