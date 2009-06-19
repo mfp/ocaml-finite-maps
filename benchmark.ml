@@ -2,7 +2,6 @@
 (* Copyright (C) 2009 Mauricio Fernandez <mfp@acm.org>  http://eigenclass.org *)
 
 open Printf
-open ExtArray
 
 let time f x =
   let t0 = Unix.gettimeofday () in
@@ -27,6 +26,17 @@ let shuffle a =
       let tmp = a.(k) in
         a.(k) <- a.(!n);
         a.(!n) <- tmp
+    done;
+    a
+
+let rev a =
+  let a = Array.copy a in
+  let max = Array.length a - 1 in
+    for i = 0 to max / 2 - 1 do
+      let j = max - i in
+      let x = a.(i) in
+        a.(i) <- a.(j);
+        a.(j) <- x
     done;
     a
 
@@ -202,7 +212,7 @@ struct
     printf "%s:\n" id;
     print_endline " strings";
     let sorted = sort lines in
-    let rev_sorted = Array.rev sorted in
+    let rev_sorted = rev sorted in
     let sorted_strings' = sort strings' in
     let shuffled = shuffle lines in
     let h = timed_array "add" build lines in

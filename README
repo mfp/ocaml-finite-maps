@@ -22,7 +22,6 @@ Requirements
 ============
 * OMake
 * OCaml (any version should do)
-* ExtLib
 
 Compiling and running
 =====================
