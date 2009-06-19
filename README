@@ -9,6 +9,8 @@ Trie_map_mod: TST with different constructors for leaves and inner nodes with
               a value
 Ternary: TST with separate constructor for nodes with and without values
          but no leaf constructor
+Map: the Map implementation from INRIA's stdlib (AVL tree)
+
 
 Imperative
 ----------
