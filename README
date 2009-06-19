@@ -1,2 +1,52 @@
 
 Several finite map implementations in OCaml, head to head.
+
+Functional
+----------
+
+Trie_map: TST with coalesced constructor for nodes with and without values
+Trie_map_mod: TST with different constructors for leaves and inner nodes with
+              a value
+Ternary: TST with separate constructor for nodes with and without values
+         but no leaf constructor
+
+Imperative
+----------
+
+Fasthashtbl: hash table with open addressing and double hashing
+Hashtbl: the hash table from INRIA's stdlib (external chaining)
+Hashtbl_mod: Hashtbl with more aggressive resizing (lower load factor)
+Hashtbl_hval: Hashtbl_mod with caching of the hash value
+
+Requirements
+============
+* OMake
+* OCaml (any version should do)
+* ExtLib
+
+Compiling and running
+=====================
+
+$ omake
+
+$ ./benchmark -help
+
+  -n N    Number of iterations (default: 3)
+  -s      Show structure sizes.
+  -help   Display this list of options
+  --help  Display this list of options
+
+$ ./benchmark -n 10
+String set size: 98568
+Target array 1: 217625
+Target array 2: 86016
+
+Fasthashtbl:
+ ints
+  add                                    0.18055s  (1205378 / sec)
+ struct size: 11124672
+  find (constant w/ overhead)            0.02775s  (36040042 / sec)
+  find (constant, no overhead)           0.02312s  (43250748 / sec)
+...
+
+
